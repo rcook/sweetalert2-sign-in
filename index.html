@@ -1,0 +1,28 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/sweetalert/1.1.0/sweetalert.min.css">
+  <style>
+  .swal2-popup {
+    font-family: "Helvetica Neue", Helvetica, Arial, sans-serif !important;
+  }
+  </style>
+  <script src="https://code.jquery.com/jquery-1.12.4.min.js"></script>
+  <script src="sign-in.js"></script>
+  <script>
+  $(function() {
+    initSweetAlert(function() {
+      SignIn.signIn(function(userId, secretToken) {
+        console.log(`userId=${userId} secretToken=${secretToken}`);
+        sweetAlert2({
+          title: "TITLE",
+          html: `userId=${userId} secretToken=${secretToken}`,
+        });
+      });
+    });
+  });
+  </script>
+</head>
+<body>
+</body>
+</html>
